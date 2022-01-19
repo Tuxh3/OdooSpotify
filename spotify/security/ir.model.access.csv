@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_spotify_spotify,spotify.persona,model_spotify_persona,base.group_user,1,1,1,1
+access_spotify_generos,spotify.generos,model_spotify_generos,base.group_user,1,0,0,0
+access_spotify_recomendaciones,spotify.recomendaciones,model_spotify_recomendaciones,base.group_user,1,0,0,0

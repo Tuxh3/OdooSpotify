@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="spotify_persona_tree_view">
+            <field name="name">spotify lista personas tree</field>
+            <field name="model">spotify.persona</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="primerNombre"/>
+                    <field name="segundoNombre"/>
+                    <field name="primerApellido"/>
+                    <field name="segundoApellido"/>
+                    <field name="generoMusical"/>
+                    <field name="recomendaciones"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="spotify_persona_form_view">
+            <field name="name">spotify lista personas form</field>
+            <field name="model">spotify.persona</field>
+            <field name="arch" type="xml">
+                <form string="Personas">
+                    <sheet>
+                        <group>
+                            <field name="primerNombre"/>
+                            <field name="segundoNombre"/>
+                            <field name="primerApellido"/>
+                            <field name="segundoApellido"/>
+                            <field name="generoMusical" widget="many2many_tags"/>
+                            <field name="recomendaciones" delete="false" edit="false" create="false"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="spotify.action_window">
+            <field name="name">Usuarios</field>
+            <field name="res_model">spotify.persona</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="spotify_generos_tree_view">
+            <field name="name">spotify lista generos tree</field>
+            <field name="model">spotify.generos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="genero"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="spotify.generos_action_window">
+            <field name="name">Generos</field>
+            <field name="res_model">spotify.generos</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="spotify_recomendaciones_tree_view">
+            <field name="name">spotify lista recomendaciones tree</field>
+            <field name="model">spotify.recomendaciones</field>
+            <field name="arch" type="xml">
+                <tree edit="false" create="false" delete="false">
+                    <field name="nombreCancion"/>
+                    <field name="urlCanción"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="spotify.recomendaciones_action_window">
+            <field name="name">Recomendaciones</field>
+            <field name="res_model">spotify.recomendaciones</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+        <!-- Top menu item -->
+        <menuitem name="Spotify" id="spotify.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Menu Personas" id="spotify.persona_menu" parent="spotify.menu_root"
+                  action="spotify.action_window"/>
+        <!--    <menuitem name="Menu 2" id="spotify.menu_2" parent="spotify.menu_root"/>-->
+
+    </data>
+</odoo>

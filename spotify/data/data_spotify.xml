@@ -1,0 +1,28 @@
+<odoo>
+    <!-- Géneros -->
+    <record model="spotify.generos" id="1">
+        <field name="genero">Rock</field>
+    </record>
+    <record model="spotify.generos" id="2">
+        <field name="genero">Pop</field>
+    </record>
+    <record model="spotify.generos" id="3">
+        <field name="genero">Salsa</field>
+    </record>
+    <record model="spotify.generos" id="4">
+        <field name="genero">Metal</field>
+    </record>
+    <record model="spotify.generos" id="5">
+        <field name="genero">Romance</field>
+    </record>
+    <record model="spotify.generos" id="6">
+        <field name="genero">Punk</field>
+    </record>
+    <record model="spotify.generos" id="7">
+        <field name="genero">Latin</field>
+    </record>
+    <record model="spotify.generos" id="9">
+        <field name="genero">Summer</field>
+    </record>
+
+</odoo>
